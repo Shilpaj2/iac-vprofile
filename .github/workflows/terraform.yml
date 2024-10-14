@@ -19,7 +19,7 @@ env:
 
 #bucket name 
  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}_
- AWS_REGION: us-east-2
+ AWS_REGION: us-east-1
  EKS_CLUSTER: vprofile-eks-shilpa
 
 jobs:
@@ -61,4 +61,4 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-        
+
