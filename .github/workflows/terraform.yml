@@ -14,13 +14,13 @@ on:
 
 env:
 # Credentials for deployment in AWS
-AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}_
+ AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}_
 
 #bucket name 
-BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}_
-AWS_REGION: us-east-2
-EKS_CLUSTER: vprofile-eks-shilpa
+ BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}_
+ AWS_REGION: us-east-2
+ EKS_CLUSTER: vprofile-eks-shilpa
 
 jobs:
   terraform:
@@ -60,4 +60,3 @@ jobs:
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-        
